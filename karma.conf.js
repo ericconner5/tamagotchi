@@ -30,6 +30,13 @@ module.exports = function(config) {
     autoWatch: true,
     browsers: ['Chrome'],
     singleRun: false,
-    concurrency: Infinity
+    concurrency: Infinity,
+    //custom launcher hopes to make karma less slow
+    customLaunchers: {
+      Chrome_without_background_throttle: {
+        base: 'Chrome',
+        flags: ['--disable-background-timer-throttling', '--disable-renderer-backgrounding'],
+      }
+    },
   })
 }
