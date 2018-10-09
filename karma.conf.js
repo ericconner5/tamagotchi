@@ -37,6 +37,6 @@ module.exports = function(config) {
         base: 'Chrome',
         flags: ['--disable-background-timer-throttling', '--disable-renderer-backgrounding'],
       }
-    },
+    }
   })
 }

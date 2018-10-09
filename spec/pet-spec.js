@@ -6,7 +6,8 @@ describe('Pet', function() {
 
   beforeEach(function() {
     jasmine.clock().install();
-    kevin = new Pet("kevin");
+    kevin = new Pet("kevin", "portland");
+
     kevin.daysPassed();
     kevin.dayToNight();
     kevin.getSleepy();
@@ -85,6 +86,17 @@ describe('Pet', function() {
     const actual = kevin.happiness;
     const control = 5;
     expect(actual).toEqual(control);
+  });
+
+  it("should check the pets local weather for temperature in Kelvins", function() {
+    kevin.getKelvin();
+    setTimeout(function () {
+      const actual = kevin.kelvin;
+      const control = 289.68;
+      console.log(`kevin is ${kevin}`)
+      expect(actual).toEqual(control);
+
+    }, 1000);
   });
 
 });
